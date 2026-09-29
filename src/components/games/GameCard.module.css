@@ -1,0 +1,18 @@
+
+.card{--accent:#7657ff;position:relative;flex:0 0 clamp(270px,24vw,315px);width:100%;background:#191d30;border:1px solid rgba(255,255,255,.1);border-radius:20px;overflow:hidden;box-shadow:0 18px 42px rgba(0,0,0,.26);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-7px);border-color:color-mix(in srgb,var(--accent),white 25%);box-shadow:0 26px 55px rgba(0,0,0,.34)}
+.artworkWrap{position:relative;aspect-ratio:16/10;background:#242941;overflow:hidden}
+.artworkWrap:after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,rgba(10,12,23,.48));pointer-events:none}
+.artworkWrap img{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.015);transition:opacity .3s ease,transform .45s ease}
+.card:hover .artworkWrap img.loaded{transform:scale(1.05)}
+.artworkWrap img.loaded{opacity:1}
+.skeleton,.fallback{position:absolute;inset:0;display:grid;place-items:center;font-size:.72rem;color:#aeb4c8;background:linear-gradient(110deg,#20253a 28%,#2c324a 42%,#20253a 58%);background-size:240% 100%;animation:pulse 1.5s linear infinite}
+.fallback{animation:none}
+.topMeta{position:absolute;inset:12px 12px auto;z-index:2;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.topMeta span,.topMeta strong{padding:5px 8px;border-radius:8px;backdrop-filter:blur(12px);background:rgba(13,16,30,.7);color:#e8ebf5;font-size:.61rem;border:1px solid rgba(255,255,255,.12)}
+.topMeta strong{background:color-mix(in srgb,var(--accent),#14172a 42%);color:#fff}
+.actionArea{min-height:116px;padding:15px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(180deg,#1b2034,#171a2b)}
+.actionArea h3{margin:0 0 7px;font-size:.95rem;color:#fff;font-weight:950;letter-spacing:-.01em}
+@keyframes pulse{to{background-position:-240% 0}}
+@media(max-width:575px){.card{flex-basis:auto;max-width:380px}.actionArea{align-items:stretch;flex-direction:column}.actionArea button{width:100%}}
+@media(prefers-reduced-motion:reduce){.card,.artworkWrap img,.skeleton{transition:none;animation:none}}

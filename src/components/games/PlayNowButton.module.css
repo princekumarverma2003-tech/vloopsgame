@@ -1,0 +1,9 @@
+
+.button{position:relative;overflow:hidden;border:0;border-radius:10px;padding:.72rem 1rem;min-width:116px;background:linear-gradient(135deg,#7358f5,#8d72ff);color:white;font-weight:950;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;box-shadow:0 9px 22px rgba(118,87,255,.25);transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;cursor:pointer}
+.button:after{content:"";position:absolute;inset:-40% auto -40% -45%;width:34%;transform:skewX(-22deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:shimmer 2.35s linear infinite}
+.button:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 13px 28px rgba(118,87,255,.34)}
+.button:active:not(:disabled){transform:scale(.97)}
+.button:disabled{opacity:.48;cursor:not-allowed;background:#50556e;box-shadow:none}
+.arrow{transition:transform .2s ease}.button:hover .arrow{transform:translateX(3px)}
+@keyframes shimmer{from{left:-45%}to{left:130%}}
+@media(prefers-reduced-motion:reduce){.button:after{animation:none}.button,.arrow{transition:none}}
